@@ -123,6 +123,26 @@ body {
   margin-bottom: 10px;
 }
 
+.sidebar.open {
+  display: flex !important;
+  position: absolute;
+  z-index: 999;
+  height: 100vh;
+  width: 80vw;
+  background: #222;
+}
+
+.ai-panel.open {
+  display: flex !important;
+  position: absolute;
+  z-index: 998;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 80vw;
+  background: #f0f0f5;
+}
+
 /* Responsive */
 @media (min-width: 768px) {
   .sidebar,
