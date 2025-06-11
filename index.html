@@ -57,5 +57,56 @@
     </aside>
 
   </div>
+  <script src="script.js">
+    let attemptCount = 0;
+const inputBox = document.querySelector('.input-panel input');
+const hintBox = document.querySelector('.ai-hint');
+const solutionBox = document.querySelector('.ai-solution');
+const keyboardButtons = document.querySelectorAll('.keyboard button');
+const returnBtn = [...keyboardButtons].find(btn => btn.textContent === '↵');
+const deleteBtn = [...keyboardButtons].find(btn => btn.textContent === '←');
+
+// Simulated solution logic
+const correctAnswer = '54'; // for "9 × 6"
+
+function checkAnswer() {
+  const userAnswer = inputBox.value.trim();
+  if (userAnswer === correctAnswer) {
+    solutionBox.innerHTML = "<strong>Correct!</strong> Great job!";
+    attemptCount = 0;
+  } else {
+    attemptCount++;
+    if (attemptCount === 1) {
+      hintBox.innerHTML = "<strong>Hint:</strong> Try skip counting by 9.";
+    } else if (attemptCount >= 3) {
+      solutionBox.innerHTML = "<strong>Solution:</strong> 9 × 6 = 54. Think of 9 groups of 6.";
+      attemptCount = 0;
+    }
+  }
+}
+
+// Handle keyboard input
+keyboardButtons.forEach(button => {
+  const key = button.textContent;
+
+  if (key === '↵') {
+    button.addEventListener('click', () => checkAnswer());
+  } else if (key === '←') {
+    button.addEventListener('click', () => {
+      inputBox.value = inputBox.value.slice(0, -1);
+    });
+  } else {
+    button.addEventListener('click', () => {
+      inputBox.value += key;
+    });
+  }
+});
+
+// Optional: Add sidebar & AI toggle buttons
+const toggleMenu = document.querySelector('.sidebar button');
+toggleMenu.addEventListener('click', () => {
+  document.querySelector('.sidebar').classList.toggle('open');
+});
+  </script>
 </body>
 </html>
