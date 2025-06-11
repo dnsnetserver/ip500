@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  display: none;
+  flex-direction: column;
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* Main Panel */
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #fff;
+}
+
+.chat-panel {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.chat-message {
+  background-color: #dfeeff;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+/* Input Panel */
+.input-panel {
+  background-color: #eee;
+  padding: 10px;
+  border-top: 2px solid #ccc;
+}
+
+.input-panel input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  margin-bottom: 10px;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row button {
+  flex: 1;
+  margin: 0 2px;
+  padding: 10px;
+  font-size: 1.2em;
+  border: none;
+  background-color: #ddd;
+  border-radius: 6px;
+}
+
+/* AI Panel */
+.ai-panel {
+  display: none;
+  flex-direction: column;
+  background-color: #f0f0f5;
+  padding: 10px;
+  border-left: 2px solid #ccc;
+}
+
+.ai-avatar {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.ai-hint,
+.ai-solution {
+  background-color: #e8e8fc;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .sidebar,
+  .ai-panel {
+    display: flex;
+    width: 180px;
+  }
+
+  .main-panel {
+    flex: 2;
+  }
+
+  .keyboard {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .row {
+    flex: 1 1 30%;
+  }
+
+  .row button {
+    margin: 2px;
+    padding: 15px;
+  }
+}
