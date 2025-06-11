@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Solver Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Left Panel -->
+    <aside class="sidebar">
+      <button>☰</button>
+      <nav>
+        <ul>
+          <li>🏠 Dashboard</li>
+          <li>🎮 Game Mode</li>
+          <li>⌨️ Input Type</li>
+          <li>🧑‍💼 Player</li>
+          <li>⚙️ Settings</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-panel">
+      <!-- Top Chat Panel -->
+      <section class="chat-panel">
+        <div class="chat-message">Solve this: 9 × 6</div>
+        <div class="chat-message">Jane has 18 apples and gives away 5. How many left?</div>
+        <div class="chat-message">What even number is between 60 and 70?</div>
+        <div class="chat-message">Replace the 💡 with the correct operator: 42 💡 6 = 7</div>
+      </section>
+
+      <!-- Bottom Input Panel -->
+      <section class="input-panel">
+        <input type="text" placeholder="Type your answer..." />
+        <div class="keyboard">
+          <div class="row"><button>1</button><button>2</button><button>3</button></div>
+          <div class="row"><button>4</button><button>5</button><button>6</button></div>
+          <div class="row"><button>7</button><button>8</button><button>9</button></div>
+          <div class="row"><button>0</button><button>←</button><button>↵</button></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Right Panel -->
+    <aside class="ai-panel">
+      <div class="ai-avatar">🤖</div>
+      <div class="ai-hint">
+        <strong>Hint:</strong> Try breaking the problem into smaller parts.
+      </div>
+      <div class="ai-solution">
+        <strong>Solution:</strong> Will appear after 3 failed attempts.
+      </div>
+    </aside>
+
+  </div>
+</body>
+</html>
